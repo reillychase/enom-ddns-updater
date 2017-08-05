@@ -3,7 +3,7 @@
 ##############################################
 # update_enom.py by: Sean Schertell, DataFly.Net, rchase
 # Revised by rchase 8/5/2017: 
-# Temporarily removed SSL check because enom SSL has errors
+# Temporarily removed SSL verification because enom SSL has errors
 # Added to github repo at https://github.com/reillychase/enom_ddns_updater with instructions
 # Modified functions that saved/retrieved current IP to text file, replaced with DNS check to see current IP
 # of host that way it will still update even if the record is changed for some other reason
