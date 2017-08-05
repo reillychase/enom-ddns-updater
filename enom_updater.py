@@ -17,7 +17,7 @@
 # Configure
 ##############################################
 
-ip_check_url = 'http://datafly.net/ip/text-only.php' # URL which returns current IP as text only
+ip_check_url = 'http://icanhazip.com' # URL which returns current IP as text only
 ip_text_file = '/usr/local/etc/update_enom.txt'      # Text file to store recent ip file
 domain       = 'example.com'                         # Enom registered domain to be altered
 password     = 'secret'                              # Domain password
