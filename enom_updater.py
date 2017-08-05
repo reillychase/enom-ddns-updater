@@ -2,6 +2,8 @@
 
 ##############################################
 # update_enom.py by: Sean Schertell, DataFly.Net
+# Revised by rchase 8/5/2017: removed SSL check because enom SSL has errors
+# Added to github repo at https://github.com/reillychase/enom_ddns_updater with instructions
 # ------------------------
 # A simple python script to update your dynamic DNS IP for domains registered with Enom.
 # 
