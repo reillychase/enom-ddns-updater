@@ -1,9 +1,12 @@
 #!/usr/local/bin/python
 
 ##############################################
-# update_enom.py by: Sean Schertell, DataFly.Net
-# Revised by rchase 8/5/2017: removed SSL check because enom SSL has errors
+# update_enom.py by: Sean Schertell, DataFly.Net, rchase
+# Revised by rchase 8/5/2017: 
+# Temporarily removed SSL check because enom SSL has errors
 # Added to github repo at https://github.com/reillychase/enom_ddns_updater with instructions
+# Modified functions that saved/retrieved current IP to text file, replaced with DNS check to see current IP
+# of host that way it will still update even if the record is changed for some other reason
 # ------------------------
 # A simple python script to update your dynamic DNS IP for domains registered with Enom.
 # 
@@ -20,22 +23,18 @@
 ##############################################
 
 ip_check_url = 'http://icanhazip.com' # URL which returns current IP as text only
-ip_text_file = '/usr/local/etc/update_enom.txt'      # Text file to store recent ip file
 domain       = 'example.com'                         # Enom registered domain to be altered
 password     = 'secret'                              # Domain password
 
 ##############################################
 
-import urllib2, os, ssl
+import urllib2, os, ssl, socket
 
 def read_url(url):
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
     return urllib2.urlopen(url, context=ctx).read()
-
-def read_file(path):
-    return open(path, 'r').read()
 
 def parse_enom_response(enom_response):
     enom_response_dict = {}
@@ -47,16 +46,10 @@ def parse_enom_response(enom_response):
             except: pass
     return enom_response_dict
 
-def save_new_ip(current_ip):
-    return open(ip_text_file, 'w').write(current_ip)
-
 def update_enom():    
-    # First, ensure that the ip_text_file exists
-    if not os.path.exists(ip_text_file):
-        open(ip_text_file, 'w').close() 
 
-    # Compare our recently saved IP to our current real IP
-    recent_ip = read_file(ip_text_file)
+    # Compare our current IP to the domain's current IP
+    recent_ip = socket.gethostbyname(domain)
     current_ip = read_url(ip_check_url)
 
     # Do they match?
@@ -74,8 +67,6 @@ def update_enom():
     if not response_vals['ErrCount'] == '0':    
         raise Exception('*** FAILED TO UPDATE! Here is the response from Enom:\n' + enom_response)
 
-    # Okay then, lets save the new ip
-    save_new_ip(current_ip)
     return    
 ##############################################
 
