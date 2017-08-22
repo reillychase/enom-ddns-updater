@@ -12,6 +12,7 @@ Dynamically updates your enom DNS hosted record
 8. Set password to domain password set previously in enom dashboard
 
 # Credits
+Modified from
 update_enom.py by: Sean Schertell, DataFly.Net
 http://secure.datafly.net/articles/update_enom.php
 
