@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 
 ##############################################
-# update_enom.py by: Sean Schertell, DataFly.Net, rchase
+# by: Sean Schertell, DataFly.Net, rchase
 # Revised by rchase 8/22/2017: 
 # Updated URL to Enom's new DDNS HTTPS URL (https://reseller.enom.com)
 # Added to github repo at https://github.com/reillychase/enom_ddns_updater with instructions
