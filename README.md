@@ -7,10 +7,9 @@ Dynamically updates your enom DNS hosted record
 3. Select your domain (must use enom hosted DNS)
 4. Go to Domain Settings
 5. Set Domain password
-6. Customize variables at the top of the script:
-  1. set ip_check_url to a known good website which returns only your public IP address
-  2. set domain to your enom domain
-  3. set password to domain password set previously in enom dashboard
+6. Customize the scrip variables: set ip_check_url to a known good website which returns only your public IP address
+7. Set domain to your enom domain
+8. Set password to domain password set previously in enom dashboard
 
 # Credits
 update_enom.py by: Sean Schertell, DataFly.Net
