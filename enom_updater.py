@@ -2,8 +2,8 @@
 
 ##############################################
 # update_enom.py by: Sean Schertell, DataFly.Net, rchase
-# Revised by rchase 8/5/2017: 
-# Temporarily removed SSL verification because enom SSL has errors
+# Revised by rchase 8/22/2017: 
+# Updated URL to Enom's new DDNS HTTPS URL (https://reseller.enom.com)
 # Added to github repo at https://github.com/reillychase/enom_ddns_updater with instructions
 # Modified functions that saved/retrieved current IP to text file, replaced with DNS check to see current IP
 # of host that way it will still update even if the record is changed for some other reason
@@ -58,7 +58,7 @@ def update_enom():
 
     # No match, so let's try to update Enom
     settings = {'domain': domain, 'password': password, 'current_ip': current_ip}
-    enom_update_url = 'https://dynamic.name-services.com/interface.asp?command=setdnshost&zone=%(domain)s&domainpassword=%(password)s&address=%(current_ip)s' % settings
+    enom_update_url = 'https://reseller.enom.com/interface.asp?command=setdnshost&zone=%(domain)s&domainpassword=%(password)s&address=%(current_ip)s' % settings
     enom_response = read_url(enom_update_url)
 
     # Any errors?
