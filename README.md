@@ -18,6 +18,5 @@ http://secure.datafly.net/articles/update_enom.php
 
 # Revisions from original script
 1. The original script saved the current IP to a text file and only updated DNS if the newly checked IP didn't match. I removed that logic to instead resolve the domain name and compare that to the newly checked IP. That way if for some reason the DNS gets manually messed up it will still be fixed by the updater rather than having to wait until an IP change.
-2. See "Warning"
 
 
