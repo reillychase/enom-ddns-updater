@@ -31,10 +31,7 @@ password     = 'secret'                              # Domain password
 import urllib2, os, ssl, socket
 
 def read_url(url):
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
-    return urllib2.urlopen(url, context=ctx).read()
+    return urllib2.urlopen(url).read()
 
 def parse_enom_response(enom_response):
     enom_response_dict = {}
