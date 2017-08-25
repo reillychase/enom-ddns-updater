@@ -1,4 +1,4 @@
-# Enom DDNS Updaer
+# Enom DDNS Updater
 Dynamically updates your enom DNS hosted record
 
 ## Instructions
