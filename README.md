@@ -2,14 +2,14 @@
 Dynamically updates your enom DNS hosted record
 
 ## Instructions
-1. Login to Enom
+1. Login to eNom
 2. Go to Domains
-3. Select your domain (must use enom hosted DNS)
+3. Select your domain (must use eNom hosted DNS)
 4. Go to Domain Settings
 5. Set Domain password
 6. Customize the scrip variables: set ip_check_url to a known good website which returns only your public IP address
-7. Set domain to your enom domain
-8. Set password to domain password set previously in enom dashboard
+7. Set domain to your eNom domain
+8. Set password to domain password set previously in eNom dashboard
 
 ## Credits
 Modified from
